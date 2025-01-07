@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user_login")
-public class User {
+public class UserLogin {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,10 @@ public class User {
   @Column(name = "role", nullable = false, unique = true, length = 50)
   private String role;
 
-  public User() {
+  public UserLogin() {
   }
 
-  public User(Long id, String name, String email, String password, String role) {
+  public UserLogin(Long id, String name, String email, String password, String role) {
     this.id = id;
     this.name = name;
     this.email = email;
@@ -75,7 +75,7 @@ public class User {
 
   @Override
   public String toString() {
-    return "User{" +
+    return "UserLogin{" +
             "id=" + id +
             ", name='" + name + '\'' +
             ", email='" + email + '\'' +
