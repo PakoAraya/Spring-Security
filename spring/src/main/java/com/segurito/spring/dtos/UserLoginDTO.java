@@ -1,12 +1,23 @@
 package com.segurito.spring.dtos;
 
 import com.segurito.spring.models.UserLogin;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class UserLoginDTO {
   private Long id;
+
+  @NotNull(message = "Name is required and not be null")
   private String name;
+
+  @NotNull(message = "Email is required and not be null")
   private String email;
+
+  @NotNull(message = "Password is required and not be null")
+  @Size(min = 6, message = "Password must be at least 8 characters long")
   private String password;
+
+  @NotNull(message = "Role is required and not be null")
   private String role;
 
   public UserLoginDTO() {
